@@ -1,0 +1,7 @@
+apiVersion: network.crd.firemiles.top/v1
+kind: Workload
+metadata:
+  name: workload-sample
+spec:
+  # Add fields here
+  foo: bar

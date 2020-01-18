@@ -1,0 +1,80 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.2.4
+  creationTimestamp: null
+  name: networks.network.crd.firemiles.top
+spec:
+  group: network.crd.firemiles.top
+  names:
+    kind: Network
+    listKind: NetworkList
+    plural: networks
+    singular: network
+  scope: Cluster
+  subresources:
+    status: {}
+  validation:
+    openAPIV3Schema:
+      description: Network is the Schema for the networks API
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: NetworkSpec defines the desired state of Network
+          properties:
+            hostNic:
+              description: HostNic is data plane physic nic on host
+              type: string
+            subnetSlices:
+              description: SubnetSlices in network, could expand slices when ip exhausted
+              items:
+                items:
+                  type: string
+                type: array
+              type: array
+            type:
+              description: 'Type is network type: host-gw, ovn'
+              type: string
+          required:
+          - subnetSlices
+          - type
+          type: object
+        status:
+          description: NetworkStatus defines the observed state of Network
+          properties:
+            message:
+              description: 'Message : message for phase'
+              type: string
+            phase:
+              description: 'Phase : Pending, Active, Failed'
+              type: string
+          required:
+          - message
+          - phase
+          type: object
+      type: object
+  version: v1
+  versions:
+  - name: v1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

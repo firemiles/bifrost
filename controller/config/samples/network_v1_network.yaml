@@ -1,0 +1,9 @@
+apiVersion: network.crd.firemiles.top/v1
+kind: Network
+metadata:
+  name: test
+spec:
+  # Add fields here
+  type: veth
+  subnetSlices:
+    - [test]

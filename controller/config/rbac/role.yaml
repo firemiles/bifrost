@@ -1,0 +1,128 @@
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - endpointpools
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - endpointpools/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - endpoints
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - endpoints/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - ipblocks
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - ipblocks/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - networks
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - networks/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - subnets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - subnets/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - workloads
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - workloads/status
+  verbs:
+  - get
+  - patch
+  - update

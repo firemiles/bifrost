@@ -1,0 +1,115 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.2.4
+  creationTimestamp: null
+  name: endpoints.network.crd.firemiles.top
+spec:
+  group: network.crd.firemiles.top
+  names:
+    kind: Endpoint
+    listKind: EndpointList
+    plural: endpoints
+    singular: endpoint
+  scope: Cluster
+  subresources:
+    status: {}
+  validation:
+    openAPIV3Schema:
+      description: Endpoint is the Schema for the endpoints API
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: EndpointSpec defines the desired state of Endpoint
+          properties:
+            interfaceName:
+              description: InterfaceName is interface name in pod
+              type: string
+            ips:
+              description: IPs are ip addresses
+              items:
+                description: FixedIP defines ip with subnet
+                properties:
+                  ip:
+                    type: string
+                  subnet:
+                    type: string
+                required:
+                - ip
+                - subnet
+                type: object
+              type: array
+            mac:
+              description: Mac is endpoint mac address
+              type: string
+            network:
+              description: Network is network name reference
+              type: string
+            subnetSlice:
+              description: SubnetSlice is subnet slice name reference
+              items:
+                description: SubnetCIDR define subnet name and cidr block allocated
+                properties:
+                  cidr:
+                    type: string
+                  subnet:
+                    type: string
+                required:
+                - cidr
+                - subnet
+                type: object
+              type: array
+            type:
+              description: Type is interface type, veth, ipvlan, macvlan
+              type: string
+          required:
+          - ips
+          - mac
+          - network
+          - subnetSlice
+          - type
+          type: object
+        status:
+          description: EndpointStatus defines the observed state of Endpoint
+          properties:
+            namespace:
+              description: Namespace is workload namespace
+              type: string
+            node:
+              description: Node is endpoint bind to
+              type: string
+            phase:
+              description: Phase Unbound, Bound
+              type: string
+            workload:
+              description: Workload is name endpoint bind to
+              type: string
+          required:
+          - phase
+          type: object
+      type: object
+  version: v1
+  versions:
+  - name: v1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

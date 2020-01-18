@@ -1,0 +1,10 @@
+apiVersion: network.crd.firemiles.top/v1
+kind: Subnet
+metadata:
+  name: test
+spec:
+  # Add fields here
+  network: test
+  cidr: 172.10.0.0/16
+  gateway: 172.10.0.1
+  routes: []

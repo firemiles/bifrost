@@ -1,0 +1,20 @@
+syntax = "proto3";
+package rpc;
+
+service BifrostBackend {
+    rpc ADD (CNIRequest) returns (CNIReply) {
+    }
+    rpc DEL (CNIRequest) returns (CNIReply) {
+    }
+    rpc CHECK(CNIRequest) returns (CNIReply) {
+    }
+}
+
+message CNIRequest {
+    string Request = 1;
+}
+
+message CNIReply {
+    string Reply = 1;
+}
+

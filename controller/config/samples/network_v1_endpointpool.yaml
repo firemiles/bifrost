@@ -1,0 +1,10 @@
+apiVersion: network.crd.firemiles.top/v1
+kind: EndpointPool
+metadata:
+  name: endpointpool-sample-2
+  finalizers: [finalizer.stable.example.com]
+spec:
+  # Add fields here
+  network: test
+  subnetSlice: [test]
+  poolSize: 2

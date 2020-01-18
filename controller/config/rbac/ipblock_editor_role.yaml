@@ -1,0 +1,26 @@
+# permissions to do edit ipblocks.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: ipblock-editor-role
+rules:
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - ipblocks
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - ipblocks/status
+  verbs:
+  - get
+  - patch
+  - update

@@ -1,0 +1,20 @@
+# permissions to do viewer endpointclaims.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: endpointclaim-viewer-role
+rules:
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - endpointclaims
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - network.crd.firemiles.top
+  resources:
+  - endpointclaims/status
+  verbs:
+  - get

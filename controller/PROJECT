@@ -1,0 +1,28 @@
+domain: crd.firemiles.top
+repo: github.com/firemiles/bifrost/controller
+resources:
+- group: network
+  kind: Node
+  version: v1
+- group: network
+  kind: Network
+  version: v1
+- group: network
+  kind: Endpoint
+  version: v1
+- group: network
+  kind: Subnet
+  version: v1
+- group: network
+  kind: IPBlock
+  version: v1
+- group: network
+  kind: Workload
+  version: v1
+- group: network
+  kind: EndpointPool
+  version: v1
+- group: network
+  kind: EndpointClaim
+  version: v1
+version: "2"

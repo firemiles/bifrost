@@ -1,0 +1,8 @@
+apiVersion: network.crd.firemiles.top/v1
+kind: IPBlock
+metadata:
+  name: ipblock-test
+spec:
+  # Add fields here
+  network: test
+  netMask: 24
