@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: bifrost-ipam
+  namespace: kube-system
+spec:
+  template:
+    spec:
+      serviceAccountName: bifrost
+      restartPolicy: OnFailure
+      containers:
+        - name: bifrost-ipam
+          image: bifrost-ipam:latest
+          volumeMounts:
+            - name: cni-bin
+              mountPath: /host/opt/cni/bin
+            - name: cni-conf
+              mountPath: /host/etc/cni/net.d
+      volumes:
+        - name: cni-bin
+          hostPath:
+            path: /opt/cni/bin
+        - name: cni-conf
+          hostPath:
+            path: /etc/cni/net.d

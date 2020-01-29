@@ -1,6 +1,6 @@
 module github.com/firemiles/bifrost
 
-go 1.12
+go 1.13
 
 require (
 	github.com/containernetworking/cni v0.7.1
