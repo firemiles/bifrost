@@ -5,20 +5,15 @@ go 1.13
 require (
 	github.com/containernetworking/cni v0.7.1
 	github.com/containernetworking/plugins v0.8.4
-	github.com/davidrjenni/reftools v0.0.0-20191222082827-65925cf01315 // indirect
-	github.com/go-delve/delve v1.3.2 // indirect
 	github.com/go-logr/logr v0.1.0
-	github.com/godoctor/godoctor v0.0.0-20181123222458-69df17f3a6f6 // indirect
 	github.com/golang/protobuf v1.3.2
 	github.com/j-keck/arping v1.0.0
 	github.com/onsi/ginkgo v1.8.0
 	github.com/onsi/gomega v1.5.0
 	github.com/pkg/errors v0.8.1
-	github.com/rogpeppe/godef v1.1.1 // indirect
-	github.com/sqs/goreturns v0.0.0-20181028201513-538ac6014518 // indirect
 	github.com/vishvananda/netlink v1.0.0
 	github.com/vishvananda/netns v0.0.0-20191106174202-0a2b9b5464df // indirect
-	github.com/willf/bitset v1.1.10 // indirect
+	golang.org/x/sys v0.0.0-20190626221950-04f50cda93cb // indirect
 	google.golang.org/grpc v1.26.0
 	k8s.io/apimachinery v0.0.0-20191028221656-72ed19daf4bb
 	k8s.io/client-go v0.0.0-20190918160344-1fbdaa4c8d90
