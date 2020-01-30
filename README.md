@@ -1,5 +1,7 @@
 # bifrost
 
+[![Build Status](https://semaphoreci.com/api/v1/firemiles/bifrost-3/branches/master/shields_badge.svg)](https://semaphoreci.com/firemiles/bifrost-3)
+
 In Norse mythology, Bifröst is a burning rainbow bridge that reaches between Midgard (Earth) and Asgard, the realm of the gods
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Heimdall_an_der_Himmelsbr%C3%BCcke.jpg/440px-Heimdall_an_der_Himmelsbr%C3%BCcke.jpg)
