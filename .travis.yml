@@ -1,10 +1,22 @@
 language: go
+dist: xenial
+
+go:
+  - 1.12.x
+  - 1.13.x
+
 services:
   - docker
-before_install:
+
+install:
+  - export GO111MODULE=on
+  - go mod download
   - go get golang.org/x/tools/cmd/cover
   - go get github.com/mattn/goveralls
+  - go get github.com/containernetworking/plugins/plugins/ipam/host-local
+
 script:
-  - go test -v -covermode=count -coverprofile=coverage.out ./... || echo go test failed
+  - sudo -E env "PATH=$PATH" go test -v -covermode=count -coverprofile=coverage.out ./...
   - $HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_TOKEN
-  - make
+  - go build -a -o bifrost-ipam cni/ipam/main.go cni/ipam/dns.go
+  - go build -a -o manager controller/main.go

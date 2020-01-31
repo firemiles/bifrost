@@ -4,7 +4,7 @@ go 1.13
 
 require (
 	github.com/containernetworking/cni v0.7.1
-	github.com/containernetworking/plugins v0.8.4
+	github.com/containernetworking/plugins v0.8.5
 	github.com/go-logr/logr v0.1.0
 	github.com/golang/protobuf v1.3.2
 	github.com/j-keck/arping v1.0.0
