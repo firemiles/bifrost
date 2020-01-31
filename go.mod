@@ -53,6 +53,7 @@ replace (
 	k8s.io/code-generator => github.com/kubernetes/code-generator v0.0.0-20191121015212-c4c8f8345c7e
 	k8s.io/klog v0.4.0 => github.com/kubernetes/klog v0.4.0
 	k8s.io/kube-openapi => github.com/kubernetes/kube-openapi v0.0.0-20191107075043-30be4d16710a
+	k8s.io/utils => github.com/kubernetes/utils v0.0.0-20200124190032-861946025e34
 	sigs.k8s.io/controller-runtime v0.4.0 => github.com/kubernetes-sigs/controller-runtime v0.4.0
 	sigs.k8s.io/controller-tools/cmd/controller-gen v0.2.4 => github.com/kubernetes-sigs/controller-tools/cmd/controller-gen v0.2.4
 	sigs.k8s.io/testing_frameworks => github.com/kubernetes-sigs/testing_frameworks v0.1.2
