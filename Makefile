@@ -12,4 +12,7 @@ bifrost-ipam: bifrost-output
 install-ipam:
 	kubectl apply -f build/package/bifrost-ipam/bifrost-ipam.yaml
 
-.PHONY: all bifrost_output bifrost-ipam install-ipam
+test: bifrost-output
+
+
+.PHONY: all bifrost_output bifrost-ipam install-ipam test

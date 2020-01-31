@@ -1,4 +1,4 @@
-# bifrost
+# Bifrost
 
 [![Build Status](https://semaphoreci.com/api/v1/firemiles/bifrost-3/branches/master/shields_badge.svg)](https://semaphoreci.com/firemiles/bifrost-3)
 [![Go Report Card](https://goreportcard.com/badge/github.com/firemiles/bifrost)](https://goreportcard.com/report/github.com/firemiles/bifrost)
